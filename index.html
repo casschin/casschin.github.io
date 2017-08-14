@@ -15,10 +15,16 @@
       }, i[r].l = 1 * new Date(); a = s.createElement(o),
         m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    var randomId = Math.random().toString(36).substring(10) + "-" + new Date().getTime();
-    ga('create', 'UA-6159825-19', { 'userId': randomId });
+
+    var userId = "";
+    if (localStorage.getItem("gaUserId")) {
+      userId = localStorage.getItem("gaUserId");
+    } else {
+      userId = Math.random().toString(36).substring(10) + "-" + new Date().getTime();
+      localStorage.setItem("gaUserId", userId);
+    }
+    ga('create', 'UA-6159825-19', { 'userId': userId });
     ga('send', 'pageview');
-    // ga('set', 'userId', Math.random().toString(36).substring(10) + "-" + new Date().getTime());
   </script>
 </body>
 
