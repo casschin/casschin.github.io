@@ -23,7 +23,7 @@
       userId = Math.random().toString(36).substring(10) + "-" + new Date().getTime();
       localStorage.setItem("gaUserId", userId);
     }
-    ga('create', 'UA-6159825-19', { 'userId': userId });
+    ga('create', 'UA-6159825-19', 'auto', { 'userId': userId });
     ga('send', 'pageview');
   </script>
 </body>
